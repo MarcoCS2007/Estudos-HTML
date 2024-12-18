@@ -1,8 +1,12 @@
 class Pessoa:
-    def __init__(self, nome, idade, comento = False, falando = False):
+    from datetime import date
+
+    data = date.year()
+
+    def __init__(self, nome, idade, comendo = False, falando = False):
         self.nome = nome
         self.idade = idade
-        self.comento = comento
+        self.comendo = comendo
         self.falando = falando
 
     def comer(self, alimento = ''):
@@ -21,7 +25,17 @@ class Pessoa:
             return
         print(f'{self.nome} parou de comer')
         self.comendo=False
-
+    
+    @classmethod
+    def data_nascimento(cls, ano_nascimento):
+        idade = cls.data - ano_nascimento
+        return (idade)
+    
+    @staticmethod
+    def get_cpf():
+        from random import randint
+        return randint(1000000, 9999999)
+        
 
 class cachorro:
     def __init__(self, nome, raça, idade, comer = False, brincar  = False, latir = False):
@@ -77,3 +91,11 @@ class cachorro:
         print ('au au')
         self.latir = True
             
+class carro:
+    def __init__(self, frear, virar_esq, virar_dir, acelerar = False,)
+        self.acelerar = acelerar
+        self.frear = frear
+        self.virar_esq = virar_esq
+        self.virar_dir = virar_dir
+        pass
+    
